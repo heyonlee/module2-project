@@ -1,0 +1,58 @@
+body{
+    margin:0%;
+    
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:30%;
+    background-color: beige;
+    margin-top: 0%;
+    padding: 8px 12px;  
+}
+.navbar p{
+    font-size: larger;
+    margin-left: 1rem;
+}
+.navbar-menu{
+    display: flex;
+    padding-left: 0%;
+}
+.navbar-menu li{
+    padding:8px 12px;
+}
+div li{
+    margin-left: 2rem;
+    font-size: medium;
+   
+   list-style: none;     
+}
+ /* 화면 크기에 따라 반응을 다르게 하게끔 해주기  */
+
+@media screen and (max-width:768px) {
+    .navbar{
+    flex-direction:column;
+     align-items : flex-start;
+     width:100%;}
+     .navbar-menu{
+        font-size: small;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+     }
+}
+.navbar-menu li:hover{
+background-color: antiquewhite;
+border-radius: 4px;
+}
+
+.hamburger{
+
+    width: 2rem;
+    height: 2rem;
+    display:flex;
+    justify-content: space-around;
+    flex-flow:column nowrap;
+    z-index: 10;
+}
