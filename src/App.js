@@ -2,7 +2,6 @@ import "./App.css";
 import { NavLink, Route, Routes } from "react-router-dom";
 
 import Home from "./components/Home";
-import AboutUs from "./components/AboutUs";
 import Brands from "./components/Brands";
 import Products from "./components/Products";
 import Contact from "./components/Contact";
@@ -16,11 +15,10 @@ import{useState, useEffect} from "react"
 // without triggering a page refresh
 
 function App() {
-const[hamburgerOpen,setHamburgerOpen] =  useState(false);
+const[isOpen,setIsOpen] =  useState(false);
 const toggleHamburger=()=>{
-  setHamburgerOpen(!hamburgerOpen)
-  console.log("clicked")
-
+  setIsOpen(!isOpen)
+  console.log("hamburgerBtnClicked")
 }
 
 
@@ -32,19 +30,16 @@ const toggleHamburger=()=>{
   return (
     <div className="App">
       <nav className="navbar">
-        //토글버튼을 div에 해도 되는지 이제 앎
+       
       <div className="hamburger" onClick={toggleHamburger}>
         <Hamburger/>
       </div>  
         <div>
           <p>My Art On Me</p>
         </div>
-        <ul className="navbar-menu">
+        <ul className={isOpen? "showMenu":"hideMenu"}>
           <li>
             <NavLink to={"/"}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/about"}>About us</NavLink>
           </li>
           <li>
             <NavLink to={"/brands"}>Brands</NavLink>
@@ -59,7 +54,25 @@ const toggleHamburger=()=>{
             <NavLink to={"/contact"}>Contact</NavLink>
           </li>
         </ul>
-     
+        <ul className="navbar-ul">
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/brands"}>Brands</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/products"}>Products</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/search"}>Search</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </li>
+          <div ><img className = "heart" alt ="likeBtn" src="img/heart.png"/></div>
+          </ul>
+         
       </nav>
      
 
@@ -67,7 +80,6 @@ const toggleHamburger=()=>{
       <Routes>
         {/* whenever the url ends with "/" , Home component must be rendered */}
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/products" element={<Products />} />
         <Route path="/search" element={<Search />} />
@@ -84,5 +96,5 @@ const toggleHamburger=()=>{
 
 export default App;
 
-//reference
+//reference toggle button (hamburger)
 //https://www.google.com/search?q=react+hamburger+menu+tutorial&oq=react+hamburger+&aqs=chrome.2.69i57j0i512j0i30l8.10721j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_NLTWYrTGLZ6ZptQP7reDwA418

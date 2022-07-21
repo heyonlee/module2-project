@@ -15,44 +15,155 @@ body{
     font-size: larger;
     margin-left: 1rem;
 }
-.navbar-menu{
+.navbar-ul{
+
     display: flex;
+    justify-content: flex-end;
     padding-left: 0%;
+    margin-left: 3rem;
+    align-items: center;
+    color: #212529;
+
 }
-.navbar-menu li{
+.navbar-ul li{
     padding:8px 12px;
 }
-div li{
+.navbar-ul li{
     margin-left: 2rem;
     font-size: medium;
    
    list-style: none;     
 }
  /* 화면 크기에 따라 반응을 다르게 하게끔 해주기  */
+.hamburger{display: none;}
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
     .navbar{
-    flex-direction:column;
+     flex-direction:column;
      align-items : flex-start;
-     width:100%;}
-     .navbar-menu{
-        font-size: small;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+     width:100%;
+   } 
+ 
+    .hamburger{
+        display: fixed;
+        width: 2rem;
+        height: 2rem;
+        display:flex;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        justify-content: space-around;
+        flex-flow:column nowrap;
+        z-index: 10;
+    }
+    .navbar-ul{
+        display:none;
+     
      }
+     .showMenu{
+        width: 200px;
+        height: 300px;
+        font-size: large;
+        font-weight: 400;
+        position: relative;
+        position: absolute;
+        top:5rem;
+        left: 0px;
+        transition: 1s;
+        list-style: none;
+        margin-top: 7rem;
+        color: #212529;
+    
+    
+        }
+
+    
+
 }
-.navbar-menu li:hover{
+.ul li:hover{
 background-color: antiquewhite;
 border-radius: 4px;
 }
 
-.hamburger{
 
-    width: 2rem;
-    height: 2rem;
-    display:flex;
-    justify-content: space-around;
-    flex-flow:column nowrap;
-    z-index: 10;
+
+.showMenu{display:none;}
+    
+.hideMenu{
+    width: 376px;
+    height: 300px;
+    position: absolute;
+    left: -376px;
+    transition: 1s;
+    list-style: none;
+    }
+
+
+/* slider */
+
+.carousel {
+    max-width: 100%;
+    position: relative;
+    z-index:-99;
+}
+
+.carousel .carousel-item {
+    display: none;
+}
+
+.carousel .carousel-item-visible {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height:25rem;
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+}
+
+.carousel .carousel-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel-actions button {
+    border-radius: 50px;
+    background-color: white;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 50%;
+    margin: 0 3rem;
+    font-family: Montserrat,sans-serif;}
+
+.carousel .carousel-actions button {
+    margin: 0 20px;
+}
+
+.Random-brands p{
+
+    font-size: 180%;
+    margin-top: 1rem;
+    margin-left: 3rem;
+
+
+}
+
+.heart {
+    max-height: 1.5rem;
+    max-width: 1.5rem;
+    margin-left: 2rem;
+    margin-right:2rem;
+    padding-left: 0%;
 }

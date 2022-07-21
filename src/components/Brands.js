@@ -1,5 +1,7 @@
-function Brands(){
+import DataByProducts from"../Data.js"
 
+function Brands(props){
+console.log(props)
 
     return (
     <div> 
