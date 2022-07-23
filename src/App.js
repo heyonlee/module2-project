@@ -1,6 +1,6 @@
 import "./App.css";
 import { NavLink, Route, Routes } from "react-router-dom";
-
+import GetData from "./Data";
 import Home from "./components/Home";
 import Brands from "./components/Brands";
 import Products from "./components/Products";
@@ -9,66 +9,76 @@ import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 import Hamburger from "./components/Hamburger";
 import{useState, useEffect} from "react"
+
+
 // NavLink: a component for setting the URL and
 // providing navigation between components
 // in our app
 // without triggering a page refresh
 
 function App() {
+ const data =GetData()
 const[isOpen,setIsOpen] =  useState(false);
 const toggleHamburger=()=>{
   setIsOpen(!isOpen)
   console.log("hamburgerBtnClicked")
 }
 
+const brandSearch=()=>{
 
+  return console.log("Hello")
+}
 
 
 
 
 
   return (
+
     <div className="App">
+
       <nav className="navbar">
        
       <div className="hamburger" onClick={toggleHamburger}>
         <Hamburger/>
       </div>  
-        <div>
-          <p>My Art On Me</p>
+        <div className="homeBtn" >
+         <NavLink style={{ textDecoration: 'none' }}to={"/"}>My Art On Me</NavLink>
         </div>
+        
+        <div className="searchBar">
+        <Search placeholder="Enter the name" data={data}/>
+        {/* <NavLink style={{ textDecoration: 'none' }}to={"/search"}> <Search placeholder="Enter the name" data={data}/></NavLink> */}
+        </div>
+        {/* <Search onChange={(e) => handleFilterChangeNamechange(e)}/> */}
         <ul className={isOpen? "showMenu":"hideMenu"}>
+          
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink style={{ textDecoration: 'none' }}to={"/brands"}>Brands</NavLink>
           </li>
           <li>
-            <NavLink to={"/brands"}>Brands</NavLink>
+            <NavLink style={{ textDecoration: 'none' }}to={"/products"}>Products</NavLink>
           </li>
+          {/* <li>
+            <NavLink style={{ textDecoration: 'none' }}to={"/search"}>Search</NavLink>
+          </li> */}
           <li>
-            <NavLink to={"/products"}>Products</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/search"}>Search</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}>Contact</NavLink>
+            <NavLink style={{ textDecoration: 'none' }}to={"/contact"}>Contact</NavLink>
           </li>
         </ul>
         <ul className="navbar-ul">
+         
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink style={{ textDecoration: 'none' }} to={"/brands"}>Brands</NavLink>
           </li>
           <li>
-            <NavLink to={"/brands"}>Brands</NavLink>
+            <NavLink style={{ textDecoration: 'none' }}to={"/products"}>Products</NavLink>
           </li>
+          {/* <li>
+            <NavLink style={{ textDecoration: 'none' }}to={"/search"}>Search</NavLink>
+          </li> */}
           <li>
-            <NavLink to={"/products"}>Products</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/search"}>Search</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}>Contact</NavLink>
+            <NavLink style={{ textDecoration: 'none' }}to={"/contact"}>Contact</NavLink>
           </li>
           <div ><img className = "heart" alt ="likeBtn" src="img/heart.png"/></div>
           </ul>

@@ -1,7 +1,15 @@
-import DataByProducts from"../Data.js"
-
+import {DataByBrands} from"../DataByBrands"
+import {useEffect,useState} from 'react'
 function Brands(props){
-console.log(props)
+  const [brands,setBrands]=useState([])
+useEffect(()=>{
+  
+        DataByBrands('essie').then((data)=>{
+          console.log(data)
+          setBrands(data)
+        })
+
+},[])  
 
     return (
     <div> 

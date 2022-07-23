@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { lists } from "./Lists";
+import GetData from "../Data";
+import RandomImage from "./RandomImage";
+import SelectedProduct from "./Selected";
 
 function Home() {
-  console.log(0);
+  const RandomImages =GetData()
+  console.log(RandomImages)
 
   const [currentImg, setCurrentImg] = useState(0);
 
@@ -17,6 +21,7 @@ function Home() {
             aria-label="Previous Slidex"
             onClick={() => {
               currentImg > 0 && setCurrentImg(currentImg - 1);
+              
             }}
           >
             &lt;
@@ -26,14 +31,18 @@ function Home() {
             aria-label="Next Slide"
             onClick={() => {
               currentImg < 2 && setCurrentImg(currentImg + 1);
+             
             }}
           >
             &gt;
           </button>
         </div>
       </div>
-      <div className="Random-brands">
-        <p >Recommendation</p>
+      <div className="SelectedItem">
+      <SelectedProduct />
+      {/* <RandomImage data={RandomImages}/> */}
+        </div>
+    <div>
       </div>
     </div>
   );
