@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { lists } from "./Lists";
 import GetData from "../Data";
-import RandomImage from "./RandomImage";
+
 import SelectedProduct from "./Selected";
 
 function Home() {
-  const RandomImages = GetData();
-  console.log(RandomImages);
+  
 
   const [currentImg, setCurrentImg] = useState(0);
 
