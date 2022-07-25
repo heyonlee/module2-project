@@ -2,8 +2,7 @@
 
 body{
     margin:0%;
-    background-color: ;
-    
+   
 }
 .navbar{
     display: flex;
@@ -102,10 +101,7 @@ body{
         align-items: center;
         margin-left: 3rem;
     }
-    .flex{
-
-
-    }
+ 
 }
 
 
