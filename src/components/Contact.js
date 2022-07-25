@@ -3,7 +3,8 @@ function Contact(){
 
     return (
     <div> 
-  연락처
+    Haeyoung Lee
+    
     </div>
     )
 }

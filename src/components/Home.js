@@ -5,8 +5,8 @@ import RandomImage from "./RandomImage";
 import SelectedProduct from "./Selected";
 
 function Home() {
-  const RandomImages =GetData()
-  console.log(RandomImages)
+  const RandomImages = GetData();
+  console.log(RandomImages);
 
   const [currentImg, setCurrentImg] = useState(0);
 
@@ -21,7 +21,6 @@ function Home() {
             aria-label="Previous Slidex"
             onClick={() => {
               currentImg > 0 && setCurrentImg(currentImg - 1);
-              
             }}
           >
             &lt;
@@ -31,7 +30,6 @@ function Home() {
             aria-label="Next Slide"
             onClick={() => {
               currentImg < 2 && setCurrentImg(currentImg + 1);
-             
             }}
           >
             &gt;
@@ -39,11 +37,10 @@ function Home() {
         </div>
       </div>
       <div className="SelectedItem">
-      <SelectedProduct />
-      {/* <RandomImage data={RandomImages}/> */}
-        </div>
-    <div>
+        <SelectedProduct />
+        {/* <RandomImage data={RandomImages}/> */}
       </div>
+      <div></div>
     </div>
   );
 }
