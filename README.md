@@ -1,6 +1,6 @@
 # My Art ON Me
 
-## Explation 
+## Explanation 
 The app I designed includes a makeup API and enables the user to search for makeup 
 products through any one of 3 methods. 
 The first method is by means of a search bar which directly presents the specified 
