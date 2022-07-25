@@ -12,7 +12,7 @@ function ProductByTags(){
   async function getDataBytags (){
     const response = await axios
       .get(
-        `http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${
+        `https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${
           { product_tags }.product_tags
         }`
       )
