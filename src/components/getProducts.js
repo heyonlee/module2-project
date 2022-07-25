@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 
 function GetProducts() {
   const [getProduct, setGetProduct] = useState([]);
-  const getSelectedProducts = () => {
-    axios
-      .get("http://makeup-api.herokuapp.com/api/v1/products.json", {
+ async function getSelectedProducts (){
+    const response = await axios
+      .get("https://makeup-api.herokuapp.com/api/v1/products.json", {
         params: { product_tags: "vegan" },
       })
-      .then((response) => setGetProduct(response.data));
+      
+      setGetProduct(response.data);
   };
 
   // useEffect(() => {
