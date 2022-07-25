@@ -9,14 +9,15 @@ function EachBrand(){
   const { brand } = useParams();   
   console.log({brand})
 
-  const getProductsByBrands = () => {
-    axios
+  async function getProductsByBrands(){
+     const response = await axios
       .get(
         `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${
           { brand }.brand
         }`
       )
-      .then((response) => setByBrand(response.data));
+      
+      setByBrand(response.data);
   };
 
   useEffect(() => {
