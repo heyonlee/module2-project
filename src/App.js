@@ -1,7 +1,7 @@
 import "./App.css";
 import { NavLink, Route, Routes } from "react-router-dom";
 import GetData from "./Data";
-import { DataByBrands } from "./DataByBrands";
+
 import Home from "./components/Home";
 import Brands from "./components/Brands";
 import Products from "./components/Products";
@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Search from "./components/Search";
 import NotFound from "./components/NotFound";
 import Hamburger from "./components/Hamburger";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import EachBrand from "./components/EachBrand";
 import ProductByTags from "./components/ProductByTags";
 
@@ -91,7 +91,7 @@ function App() {
       </nav>
 
       <Routes>
-        {/* whenever the url ends with "/" , Home component must be rendered */}
+      
         <Route path="/" element={<Home />} />
         <Route path="/brands" element={<Brands />} />
         {/* <Route path="/brands" element={<Brands brandData={DataByBrands}/>} /> */}
@@ -102,9 +102,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
 
-        {/* <Route path="/posts" element={<Posts postsData={data} />} />
-        <Route path="/posts/:post_id" element={<Post {...data} />} />
-        <Route path="*" element={<NoMatch />} /> */}
       </Routes>
     </div>
   );

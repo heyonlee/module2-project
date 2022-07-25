@@ -1,7 +1,7 @@
 import EachBrand from "./EachBrand";
 import { useEffect, useState } from "react";
 import { DataByBrands } from "../DataByBrands";
-import { render } from "@testing-library/react";
+
 import{useNavigate} from 'react-router-dom'
 
 function Brands(props) {
@@ -11,10 +11,12 @@ function Brands(props) {
     "alva",
     "anna sui",
     "annabelle",
+    
     "benefit",
     "boosh",
     "burt's bees",
     "butter london",
+    
     "c'est moi",
     "cargo cosmetics",
     "china glaze",
@@ -23,10 +25,12 @@ function Brands(props) {
     "coastal classic creation",
     "colourpop",
     "covergirl",
+    
     "dalish",
     "deciem",
     "dior",
     "dr. hauschka",
+    
     "e.l.f.",
     "essie",
     "fenty",
@@ -34,6 +38,7 @@ function Brands(props) {
     "green people",
     "iman",
     "l'oreal",
+    
     "lotus cosmetics usa",
     "maia's mineral galaxy",
     "marcelle",
@@ -44,6 +49,7 @@ function Brands(props) {
     "misa",
     "mistura",
     "moov",
+    
     "nudus",
     "nyx",
     "orly",
@@ -52,6 +58,7 @@ function Brands(props) {
     "physicians formula",
     "piggy paint",
     "pure anada",
+    
     "rejuva minerals",
     "revlon",
     "sally b's skin yummies",
@@ -61,6 +68,7 @@ function Brands(props) {
     "smashbox",
     "stila",
     "suncoat",
+    
     "w3llpeople",
     "wet n wild",
     "zorah",
@@ -78,7 +86,8 @@ function Brands(props) {
   console.log(brandList.map((x) => x));
 
   const renderBrandList = () => {
-    return brandList.map((x) => (
+    return brandList.map((x) => 
+    
       <div>
         <div>
           <p>{x}</p>
@@ -87,8 +96,8 @@ function Brands(props) {
           <button>see more</button>
         </div>
       </div>
-    ));
-  };
+   );
+};
   console.log(renderBrandList());
   console.log(typeof brandList[10]);
 
