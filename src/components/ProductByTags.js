@@ -10,13 +10,19 @@ function ProductByTags(){
   console.log({product_tags})
 
   async function getDataBytags (){
+    try{
     const response = await axios
       .get(
         `https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${
           { product_tags }.product_tags
         }`
       )
-       setByTag(response.data);
+       setByTag(response.data);}
+       catch(e){
+  
+        return null;}
+
+
   };
 
   useEffect(() => {
